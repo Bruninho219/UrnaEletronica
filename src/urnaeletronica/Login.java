@@ -1,7 +1,6 @@
 package urnaeletronica;
 import java.sql.*;
 import BD.ConexaoBD;
-import java.awt.event.KeyEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -17,7 +16,6 @@ public class Login extends javax.swing.JFrame
         initComponents();
         conecta = ConexaoBD.conecta();
         this.setResizable(false);
-        
     }
 
     @SuppressWarnings("unchecked")
@@ -107,13 +105,10 @@ public class Login extends javax.swing.JFrame
             pst = conecta.prepareStatement(sql);
             pst.setString(1, User.getText());
             pst.setString(2, Senha.getText());
-            
             rs=pst.executeQuery();
-            
             
             if(rs.next())
             {
-                //JOptionPane.showMessageDialog(null, "Entrou aqui");
                 Geral g = new Geral();
                 g.setVisible(true);
                 dispose();
@@ -130,18 +125,6 @@ public class Login extends javax.swing.JFrame
     }
     
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        
-        /*try
-        {
-            Geral g = new Geral();
-            g.setVisible(true);
-            dispose();
-        }
-        catch (ClassNotFoundException ex)
-        {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        */
         try
         {
             Verifica();
@@ -150,14 +133,12 @@ public class Login extends javax.swing.JFrame
         {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     private void VoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarActionPerformed
-        Main m;
         try
         {
-            m = new Main();
+            Main m = new Main();
         }
         catch (ClassNotFoundException ex)
         {
@@ -165,47 +146,6 @@ public class Login extends javax.swing.JFrame
         }
         dispose();
     }//GEN-LAST:event_VoltarActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try
-                {
-                    new Login().setVisible(true);
-                }
-                catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField Senha;

@@ -24,7 +24,7 @@ public class ResultadoGeral extends javax.swing.JFrame
     {
         String sql;
         sql=null;
-        sql ="Select * from politico order by nome " + x + " limit " + limiteSQL;
+        sql ="Select * from politico order by voto " + x + " limit " + limiteSQL;
         
         try
         {
@@ -42,7 +42,7 @@ public class ResultadoGeral extends javax.swing.JFrame
     {
         String sql;
         sql = "Select idpolitico as ID, nome as Nome, curso as Curso, voto as Votos\n" +
-            "from politico";        
+            "from politico ORDER BY idpolitico asc";        
         
         try
         {
@@ -192,6 +192,7 @@ public class ResultadoGeral extends javax.swing.JFrame
         try
         {
             g = new Geral();
+            g.setVisible(true);
         }
         catch (ClassNotFoundException ex)
         {

@@ -24,6 +24,7 @@ public class Geral extends javax.swing.JFrame
     {
         ResultadoGeral j = new ResultadoGeral();  
         j.setVisible(true);
+        dispose();
     }
     
     public void Deletar(int del) throws SQLException
@@ -331,6 +332,7 @@ public class Geral extends javax.swing.JFrame
   
         java.awt.EventQueue.invokeLater(new Runnable()
         {
+            @Override
             public void run() {
                 try
                 {

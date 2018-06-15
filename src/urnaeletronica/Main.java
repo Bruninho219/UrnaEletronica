@@ -58,7 +58,8 @@ public class Main extends javax.swing.JFrame
             clip.open(AudioSystem.getAudioInputStream(getClass().getResourceAsStream(ruta + arquivo + ".wav")));
             clip.start();
             
-        } catch (IOException | LineUnavailableException | UnsupportedAudioFileException e)
+        }
+        catch (IOException | LineUnavailableException | UnsupportedAudioFileException e)
         {}
     }
         
@@ -398,11 +399,9 @@ public class Main extends javax.swing.JFrame
     
     public void Registrar(int y) throws SQLException
     {
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());  
-        String date = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(timestamp.getTime());  
-        //JOptionPane.showMessageDialog(null, date);
+        //Timestamp timestamp = new Timestamp(System.currentTimeMillis());  
+        //String date = new SimpleDateFormat("dd/MM/yyyy HH:mm").format(timestamp.getTime());
         String sql = "Insert into historico(id, dataa) values("+ y +",now())";
-        //"Insert into urna.historico(id, dataa) values(111, now());"
         
         pst =  con.prepareStatement(sql);
         pst.executeUpdate(sql);
@@ -496,7 +495,6 @@ public class Main extends javax.swing.JFrame
             vet[x]=3;
             x++;
             numero.setText(numero.getText()+ btn3.getText());
-            
         }
         if(x==3)
         {
@@ -630,7 +628,6 @@ public class Main extends javax.swing.JFrame
         curso.setText("");
         nome1.setText("");
         Imagem.setIcon(new javax.swing.ImageIcon(user));
-        
     }//GEN-LAST:event_btnCorrigeActionPerformed
     
     private void btnConfirmaActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_btnConfirmaActionPerformed
@@ -670,7 +667,6 @@ public class Main extends javax.swing.JFrame
             nome1.setText("");
             Imagem.setIcon(new javax.swing.ImageIcon(user));
         }
-        
     }//GEN-LAST:event_btnConfirmaActionPerformed
 
     private void btnConfigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfigActionPerformed
@@ -683,7 +679,6 @@ public class Main extends javax.swing.JFrame
         {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
     }//GEN-LAST:event_btnConfigActionPerformed
 
     public static void main(String args[])
