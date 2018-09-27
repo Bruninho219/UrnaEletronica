@@ -1,8 +1,7 @@
-#https://www.gitignore.io/api/netbeans
-
-/nbproject/private/
 /build/
-/nbbuild/
 /dist/
+/nbproject/private/
+/nbbuild/
 /nbdist/
+/src/Imagens/
 .nb-gradle/
